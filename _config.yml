@@ -1,7 +1,7 @@
 # Site settings
 title: Willian Justen - Desenvolvedor Front End
 description: A blog about lorem ipsum dolor sit amet
-baseurl: "/cards-jekyll-template" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://dev.immutable.run" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
@@ -18,6 +18,9 @@ markdown: kramdown
 highlighter: rouge
 permalink: /:title/
 
+source: .
+destination: ./_site
+plugins: ['jekyll-paginate', 'jekyll-sitemap', 'jemoji']
 
 # html minify
 compress_html:
