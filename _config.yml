@@ -1,35 +1,9 @@
-# Evento Theme/Blog
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-title: immutable.run
-
-#What is the name of the events or talks you would like to host? (Example Brownbags, Talks, Lighting Talks)
-event_label: Templates
-
-description: > # this means to ignore newlines until "baseurl:"
-  Simple immutable templates
+name: Linear
+description: Linear template for Jekyll
+paginate: 10
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://immutable.run" # the base hostname & protocol for your site
-
-#These settings might be able to go?
-author: Matteo Madeddu
-twitter_username: made2591
-github_username: made2591
-company_name: immutable.run
-
-# Build settings
-markdown: kramdown
-
-#Have to show future posts for future events.
-future: true
-
-permalink: /template/:title.html
 
 source: .
 destination: ./_site

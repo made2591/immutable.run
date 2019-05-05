@@ -1,64 +1,80 @@
 ---
+title: immutable.run
 layout: default
-cover: 'http://www.abisolutions.org.uk/website/images/ConferencesHR.jpg'
 ---
+<!-- Featured -->
+<div id="featured">
+	<div class="container">
+		<header>
+			<h2>immutable.run</h2>
+		</header>
+		<p>This is <strong>immutable</strong>, a site with free templates by two guys. Released for free under the <a href="https://opensource.org/licenses/MIT">MIT</a> license, so use it for whatever (personal or commercial) &ndash; just give us credit! Check out more of our stuff at <a href="https://github.com/GuidoNebiolo/aws-architectures">our github page</a> or <a href="#contact">contact us</a> if you need a specific template.</p>
+		<hr />
+		<div class="row">
+			<section class="4u">
+				<span class="pennant"><span class="fa fa-briefcase"></span></span>
+				<h3>Ready to go</h3>
+				<p>The provided template are build with CDK, opinionated by design and ready to be deployed.</p>
+				<a href="https://docs.aws.amazon.com/cdk/latest/guide/what-is.html" class="button button-style1">Read More</a>
+			</section>
+			<section class="4u">
+				<span class="pennant"><span class="fa fa-lock"></span></span>
+				<h3>Secure</h3>
+				<p>Templates does not require any secrets to be exposed thus there are zero risks to commit them.</p>
+				<a href="https://aws.amazon.com/blogs/aws/aws-secrets-manager-store-distribute-and-rotate-credentials-securely/" class="button button-style1">Read More</a>
+			</section>
+			<section class="4u">
+				<span class="pennant"><span class="fa fa-globe"></span></span>
+				<h3>Global</h3>
+				<p>World wide deployable, the templates are intented to be used in every region. No services limitation.</p>
+				<a href="https://aws.amazon.com/it/about-aws/global-infrastructure/" class="button button-style1">Read More</a>
+			</section>
 
-
-
-<div class="home">
-    
-    {% capture currentDate %}{{'now' | date: '%s' }}{% endcapture %}
-
-    <div class="clearfix">
-
-      <h1 class="event-time-heading fix-top">Future {% if site.event_label %} {{site.event_label}} {% else %} Events {% endif %} </h1>
-
-      {% for post in site.posts reversed %}
-
-        {% capture blogDate %}{{post.date | date: '%s' }}{% endcapture %}
-
-        {% if blogDate >= currentDate %}
-      
-          <a href="{{ post.url | prepend: site.baseurl }}">
-            {% if post.cover %}
-            <div class="event-sqaure" style="background-image:url({{post.cover}});">
-            {% else %}
-            <div class="event-sqaure" style="background-image:url(http://evento.io/img/cover.jpg);">
-            {% endif %}
-              <h2>{{ post.title }} <span>{{ post.date | date: "%b %-d, %Y" }}</span></h2>
-               <div class='event-square-overlay'></div>
-            </div>
-           
-          </a>
-
-        {% endif %}
-
-      {% endfor %}
-    </div>
-    <div class="clearfix">
-
-      <h1 class="event-time-heading">Past {% if site.event_label %} {{site.event_label}} {% else %} Events {% endif %} </h1>
-      {% for post in site.posts %}
-
-        {% capture blogDate %}{{post.date | date: '%s' }}{% endcapture %}
-
-        {% if blogDate < currentDate %}
-
-          <a href="{{ post.url | prepend: site.baseurl }}">
-            {% if post.cover %}
-            <div class="event-sqaure" style="background-image:url({{post.cover}});">
-            {% else %}
-            <div class="event-sqaure" style="background-image:url(http://app-beacon.com/wp-content/uploads/2015/05/events.jpg);">
-            {% endif %}
-              <h2>{{ post.title }} <span>{{ post.date | date: "%b %-d, %Y" }}</span></h2>
-              <div class='event-square-overlay'></div>
-            </div>
-            
-          </a>
-
-        {% endif %}
-
-      {% endfor %}
-    </div>
-
+		</div>
+	</div>
 </div>
+
+<!-- Main -->
+	<div id="main">
+		<div id="content" class="container">
+
+			<div class="row">
+				<section class="6u">
+					<a href="http://localhost:4000/2019/05/10/static-website.html" class="image full"><img src="/assets/images/pic01.jpg" alt=""></a>
+					<header>
+						<h2>Static Web Site</h2>
+					</header>
+					<p><strong>Services</strong>: S3, Cloudfront, Codepipeline, Codebuild, Lambda, Route 53</p>
+					<p><strong>Description</strong>: This stack provides a serverless solution to host your static website: the stack include a release pipeline with a lambda with cache invalidation.</p>
+				</section>
+				<section class="6u">
+					<a href="http://localhost:4000/2019/05/20/contact-form.html" class="image full"><img src="/assets/images/pic02.jpg" alt=""></a>
+					<header>
+						<h2>Contact Form</h2>
+					</header>
+					<p><strong>Services</strong>: API Gateway, DynamoDB, DynamoStream, SNS.</p>
+					<p><strong>Description</strong>: This stack provides a serverless solution to create contact form by leveraging direct service integration and proxy capabilities of API Gateway.</p>
+				</section>
+			</div>
+
+			<div class="row">
+				<section class="6u">
+					<a href="#" class="image full"><img src="/assets/images/pic03.jpg" alt=""></a>
+					<header>
+						<h2>User Registration</h2>
+					</header>
+					<p><strong>Services</strong>: Cognito</p>
+					<p><strong>Description</strong>: This stack provides a serverless solution to host your static website: the stack include a release pipeline with a lambda with cache invalidation.</p>
+				</section>
+				<section class="6u">
+					<a href="#" class="image full"><img src="/assets/images/pic04.jpg" alt=""></a>
+					<header>
+						<h2>Next One</h2>
+					</header>
+					<p><strong>Services</strong>: Step Function</p>
+					<p><strong>Description</strong>: In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. </p>
+				</section>
+			</div>
+
+		</div>
+	</div>
