@@ -1,6 +1,5 @@
 name: Linear
 description: Linear template for Jekyll
-paginate: 10
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://immutable.run" # the base hostname & protocol for your site
@@ -9,11 +8,25 @@ source: .
 destination: ./_site
 plugins: ["jekyll-paginate", "jekyll-sitemap", "jemoji"]
 
-permalink: /template/:title.html
-
 # html minify
 compress_html:
   clippings: all
   comments: all
   endings: []
   profile: false
+
+paginate: 10
+paginate_path: /posts/page-:num
+permalink: /posts/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
