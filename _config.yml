@@ -16,8 +16,8 @@ compress_html:
   profile: false
 
 paginate: 10
-paginate_path: /posts/page-:num
-permalink: /posts/:title/
+paginate_path: /templates/page-:num
+permalink: /templates/:title/
 
 defaults:
   - scope:
