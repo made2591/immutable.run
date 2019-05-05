@@ -31,6 +31,10 @@ future: true
 
 permalink: /template/:title.html
 
+source: .
+destination: ./_site
+plugins: ["jekyll-paginate", "jekyll-sitemap", "jemoji"]
+
 # html minify
 compress_html:
   clippings: all
