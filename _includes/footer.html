@@ -1,4 +1,13 @@
-<footer>
-    <p>Made with <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and <span class="love">❤</span> by <a href="http://willianjusten.com.br">Willian Justen</a></p>
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title }}</h2>
+    <p>
+      {{ site.description }}
+      {% include icon-github.html %}
+    </p>
+
+  </div>
+
 </footer>
-<script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>

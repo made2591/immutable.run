@@ -1,32 +1,64 @@
 ---
 layout: default
+cover: 'http://www.abisolutions.org.uk/website/images/ConferencesHR.jpg'
 ---
 
-<main class="home" id="post" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
-    <div id="grid" class="row flex-grid">
-    {% for post in site.posts %}
-        <article class="box-item post-{{post.main-class}}" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-            <span class="ribbon">
-                <a href="{{site.url}}{{site.baseurl}}/category/{{post.main-class}}"><span>{{post.main-class}}</span></a>
-            </span>
-            <div class="box-body">
-                <meta itemprop="datePublished" content="{{post.date | date_to_xmlschema }}">
-                <time itemprop="datePublished" datetime="{{ post.date }}" class="date">{{ post.date | date_to_string }}</time>
-                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-                    <h2 class="post-title" itemprop="name">
-                        {{ post.title }}
-                    </h2>
-                </a>
-                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-                    <p class="description">{{ post.introduction }}</p>
-                </a>
-                <div class="tags">
-                    {% for tag in post.tags %}
-                        <a href="{{site.baseurl}}/tags/#{{tag | slugify }}">{{ tag }}</a>
-                    {% endfor %}
-                </div>
+
+
+<div class="home">
+    
+    {% capture currentDate %}{{'now' | date: '%s' }}{% endcapture %}
+
+    <div class="clearfix">
+
+      <h1 class="event-time-heading fix-top">Future {% if site.event_label %} {{site.event_label}} {% else %} Events {% endif %} </h1>
+
+      {% for post in site.posts reversed %}
+
+        {% capture blogDate %}{{post.date | date: '%s' }}{% endcapture %}
+
+        {% if blogDate >= currentDate %}
+      
+          <a href="{{ post.url | prepend: site.baseurl }}">
+            {% if post.cover %}
+            <div class="event-sqaure" style="background-image:url({{post.cover}});">
+            {% else %}
+            <div class="event-sqaure" style="background-image:url(http://evento.io/img/cover.jpg);">
+            {% endif %}
+              <h2>{{ post.title }} <span>{{ post.date | date: "%b %-d, %Y" }}</span></h2>
+               <div class='event-square-overlay'></div>
             </div>
-        </article>
-    {% endfor %}
+           
+          </a>
+
+        {% endif %}
+
+      {% endfor %}
     </div>
-</main>
+    <div class="clearfix">
+
+      <h1 class="event-time-heading">Past {% if site.event_label %} {{site.event_label}} {% else %} Events {% endif %} </h1>
+      {% for post in site.posts %}
+
+        {% capture blogDate %}{{post.date | date: '%s' }}{% endcapture %}
+
+        {% if blogDate < currentDate %}
+
+          <a href="{{ post.url | prepend: site.baseurl }}">
+            {% if post.cover %}
+            <div class="event-sqaure" style="background-image:url({{post.cover}});">
+            {% else %}
+            <div class="event-sqaure" style="background-image:url(http://app-beacon.com/wp-content/uploads/2015/05/events.jpg);">
+            {% endif %}
+              <h2>{{ post.title }} <span>{{ post.date | date: "%b %-d, %Y" }}</span></h2>
+              <div class='event-square-overlay'></div>
+            </div>
+            
+          </a>
+
+        {% endif %}
+
+      {% endfor %}
+    </div>
+
+</div>
