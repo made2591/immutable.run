@@ -1,8 +1,8 @@
 ---
 title: Contact Form
 featured: images/pic03.jpg
-imgschema: https://i.imgur.com/JSi8NBn.png
 layout: post
+imgschema: https://i.imgur.com/JSi8NBn.png
 ---
 
 <p>A git commit brings changes to a git repository. Every time this happens, a Cloudwatch event (2) triggers the CodePipeline execution (3): this pipeline is composed of three stages.</p>
